@@ -4,7 +4,7 @@ Tags: blog, news, one-column, two-columns, right-sidebar, wide-blocks, block-pat
 Requires at least: 6.4
 Tested up to: 6.7
 Requires PHP: 7.4
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -120,6 +120,14 @@ znazz75 is distributed under the terms of the GNU GPL v2 (or later). See LICENSE
 This theme bundles no third-party fonts, images, icon fonts or JavaScript libraries — its inline SVG icons were authored for this theme. It does not include a copy of any code, markup, text or imagery from shareus.com or codeshack.io; both sites were used only as visual/structural references (layout, color palette, corner radii, shadow style) during design.
 
 == Changelog ==
+
+= 1.0.1 =
+* Fixed a large batch of "Block contains unexpected or invalid content" editor errors: many block comments across the templates, template parts and patterns declared padding/margin/color/font-size attributes that were never mirrored into the saved HTML tag, so the block editor's validator rejected them (they still rendered on the front end, just without that spacing/style). Every template, template part and pattern was audited and the mismatches corrected.
+* Fixed the single post Comments block: it was missing its outer wrapper element (a second, structural validation failure) and only rendered the "leave a reply" form — existing/threaded comments never actually displayed on the front end despite being advertised. It now includes a proper comment template (avatar, author, date, content, reply link) and pagination, and threaded comments display correctly.
+* Fixed the packaged release zip: it was built with PowerShell's `Compress-Archive`, which wrote internal entry paths with backslashes instead of the forward slashes the ZIP format requires, so WordPress couldn't see `style.css` inside the theme folder and refused to install it ("The theme is missing the style.css stylesheet"). The zip is now built with correct forward-slash paths.
+* Fixed `LICENSE`, which contained a raw HTTP redirect page instead of the GPLv2 license text.
+* Fixed `screenshot.png`, which still showed placeholder branding from an earlier working name.
+* Fixed a responsive layout bug where the header's search field and "Subscribe" button would overflow and wrap illegibly on viewports narrower than ~1024px, and content could sit flush against the viewport edge on any screen narrower than the theme's content width (missing root padding).
 
 = 1.0.0 =
 * Initial public release.

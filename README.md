@@ -58,5 +58,12 @@ This theme bundles no third-party fonts, images, icon fonts or JavaScript librar
 
 ## Changelog
 
+### 1.0.1
+- Fixed a large batch of block-validation errors ("Block contains unexpected or invalid content") caused by block comments whose declared padding/margin/color/font-size attributes weren't mirrored into the saved HTML.
+- Fixed the single post Comments block: it was missing its wrapper and never actually displayed existing/threaded comments on the front end — only the reply form. It now renders a proper comment list (avatar, author, date, content, reply link) with pagination.
+- Fixed the release zip, which had backslash path separators (from PowerShell's `Compress-Archive`) that made WordPress unable to see `style.css` inside it.
+- Fixed `LICENSE` (was a raw HTTP redirect page) and `screenshot.png` (stale placeholder branding).
+- Fixed a responsive overflow bug in the header below ~1024px and missing root padding on narrow viewports.
+
 ### 1.0.0
 - Initial public release.

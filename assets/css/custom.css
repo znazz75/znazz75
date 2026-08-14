@@ -471,6 +471,48 @@
 }
 
 /* --------------------------------------------------------------------------
+   9b. Comments
+   -------------------------------------------------------------------------- */
+.comments-area {
+	margin-top: 3rem;
+}
+
+.comments-area .wp-block-comments-title {
+	margin-block-end: 1.5rem;
+}
+
+.comment-card {
+	padding-block: 1.25rem;
+	border-top: 1px solid var(--wp--preset--color--base-3);
+}
+
+.comment-card:first-child {
+	border-top: 0;
+}
+
+.comment-card .wp-block-avatar img {
+	display: block;
+}
+
+.comment-card .wp-block-comment-author-name {
+	font-weight: 600;
+}
+
+.comment-card .wp-block-comment-date,
+.comment-card .wp-block-comment-date a {
+	color: var(--wp--preset--color--muted);
+}
+
+.comment-card .wp-block-comment-content {
+	margin-block: 0.5rem;
+}
+
+.comment-card .wp-block-comment-reply-link a {
+	font-weight: 600;
+	text-decoration: none;
+}
+
+/* --------------------------------------------------------------------------
    10. Footer
    -------------------------------------------------------------------------- */
 .site-footer {

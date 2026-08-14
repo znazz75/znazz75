@@ -10,9 +10,9 @@
 ?>
 
 <!-- wp:group {"align":"wide","className":"section-products","layout":{"type":"constrained"},"style":{"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70"}}}} -->
-<div class="wp-block-group alignwide section-products">
+<div class="wp-block-group alignwide section-products" style="padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--70)">
 	<!-- wp:group {"className":"section-head","layout":{"type":"constrained"},"style":{"spacing":{"margin":{"bottom":"2rem"}}}} -->
-	<div class="wp-block-group section-head">
+	<div class="wp-block-group section-head" style="margin-bottom:2rem">
 		<!-- wp:paragraph {"className":"section-subtitle","align":"center"} -->
 		<p class="section-subtitle has-text-align-center">Products</p>
 		<!-- /wp:paragraph -->
@@ -46,7 +46,7 @@
 				<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
 				<div class="wp-block-buttons">
 					<!-- wp:button {"className":"is-style-pill","fontSize":"small"} -->
-					<div class="wp-block-button is-style-pill"><a class="wp-block-button__link wp-element-button">Learn more</a></div>
+					<div class="wp-block-button is-style-pill"><a class="wp-block-button__link has-small-font-size has-custom-font-size wp-element-button">Learn more</a></div>
 					<!-- /wp:button -->
 				</div>
 				<!-- /wp:buttons -->
@@ -74,7 +74,7 @@
 				<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
 				<div class="wp-block-buttons">
 					<!-- wp:button {"className":"is-style-pill","fontSize":"small"} -->
-					<div class="wp-block-button is-style-pill"><a class="wp-block-button__link wp-element-button">Learn more</a></div>
+					<div class="wp-block-button is-style-pill"><a class="wp-block-button__link has-small-font-size has-custom-font-size wp-element-button">Learn more</a></div>
 					<!-- /wp:button -->
 				</div>
 				<!-- /wp:buttons -->
@@ -102,7 +102,7 @@
 				<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
 				<div class="wp-block-buttons">
 					<!-- wp:button {"className":"is-style-pill","fontSize":"small"} -->
-					<div class="wp-block-button is-style-pill"><a class="wp-block-button__link wp-element-button">Learn more</a></div>
+					<div class="wp-block-button is-style-pill"><a class="wp-block-button__link has-small-font-size has-custom-font-size wp-element-button">Learn more</a></div>
 					<!-- /wp:button -->
 				</div>
 				<!-- /wp:buttons -->
