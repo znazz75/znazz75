@@ -22,6 +22,7 @@ A modern WordPress **block theme** (full-site editing / FSE) built entirely on c
 - Reusable block patterns: hero, stats, products, latest posts, newsletter, post card, sidebar
 - Custom block styles: Pill buttons, Chip post-terms, Card groups/columns, Rounded images
 - No external font, script or tracking requests — self-hosted/system fonts only
+- On-brand favicon/touch-icon set bundled as a fallback (favicon.ico, Apple touch icon, Android/PWA manifest icons), used automatically until you set your own Site Icon
 
 ## Requirements
 
@@ -57,6 +58,9 @@ The theme intentionally ships as **layout, typography and color only** — it do
 This theme bundles no third-party fonts, images, icon fonts or JavaScript libraries — its inline SVG icons were authored for this theme.
 
 ## Changelog
+
+### 1.1.0
+- Added a bundled favicon/touch-icon set (`assets/favicon/`), served as a fallback via `wp_head`/`login_head` only when no Site Icon is set (Appearance → Editor → Site Icon) — never overrides a site owner's own choice.
 
 ### 1.0.1
 - Fixed a large batch of block-validation errors ("Block contains unexpected or invalid content") caused by block comments whose declared padding/margin/color/font-size attributes weren't mirrored into the saved HTML.

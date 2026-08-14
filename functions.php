@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'ZNAZZ75_VERSION', '1.0.1' );
+define( 'ZNAZZ75_VERSION', '1.1.0' );
 
 /**
  * Theme setup.
@@ -69,6 +69,38 @@ function znazz75_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'znazz75_scripts' );
 add_action( 'enqueue_block_editor_assets', 'znazz75_scripts' );
+
+/**
+ * Favicon: bundled fallback.
+ *
+ * WordPress' native Site Icon (Appearance → Editor → Site Icon, or the
+ * Customizer on classic setups) is always the source of truth for a site's
+ * favicon, and a theme should never hardcode one that the site owner can't
+ * override — that raster icon is already resized by WordPress itself into
+ * every favicon/touch-icon size a browser needs. This function only ever
+ * fires when no Site Icon has been set yet, so the icon set bundled in
+ * assets/favicon/ (see assets/favicon/about.txt for provenance) just gives
+ * the theme a good-looking, on-brand default out of the box. As soon as a
+ * Site Icon is set, WordPress' own wp_site_icon()/login output takes over
+ * and this fallback stops rendering automatically.
+ */
+function znazz75_favicon() {
+	if ( has_site_icon() ) {
+		return;
+	}
+
+	$favicon_uri = get_theme_file_uri( 'assets/favicon' );
+	?>
+	<link rel="icon" href="<?php echo esc_url( "$favicon_uri/favicon.ico" ); ?>" sizes="any">
+	<link rel="icon" type="image/png" sizes="16x16" href="<?php echo esc_url( "$favicon_uri/favicon-16x16.png" ); ?>">
+	<link rel="icon" type="image/png" sizes="32x32" href="<?php echo esc_url( "$favicon_uri/favicon-32x32.png" ); ?>">
+	<link rel="apple-touch-icon" href="<?php echo esc_url( "$favicon_uri/apple-touch-icon.png" ); ?>">
+	<link rel="manifest" href="<?php echo esc_url( "$favicon_uri/site.webmanifest" ); ?>">
+	<meta name="theme-color" content="#2563eb">
+	<?php
+}
+add_action( 'wp_head', 'znazz75_favicon' );
+add_action( 'login_head', 'znazz75_favicon' );
 
 /**
  * Register custom block styles.
