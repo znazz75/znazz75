@@ -23,9 +23,7 @@
 			<!-- /wp:heading -->
 		</div>
 		<!-- /wp:group -->
-		<!-- wp:paragraph {"textColor":"muted"} -->
-		<p class="has-muted-color has-text-color"><a href="#">View all articles</a></p>
-		<!-- /wp:paragraph -->
+		<!-- wp:pattern {"slug":"znazz75/blog-link"} /-->
 	</div>
 	<!-- /wp:group -->
 	<!-- wp:query {"queryId":5,"query":{"perPage":6,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false},"className":"posts-grid"} -->

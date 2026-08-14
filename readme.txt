@@ -4,7 +4,7 @@ Tags: blog, news, one-column, two-columns, right-sidebar, wide-blocks, block-pat
 Requires at least: 6.4
 Tested up to: 6.7
 Requires PHP: 7.4
-Stable tag: 1.1.0
+Stable tag: 1.1.1
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -123,6 +123,10 @@ This theme bundles no third-party fonts, images, icon fonts or JavaScript librar
 The bundled favicon set (`assets/favicon/`) is a static, pre-rendered raster image set — no font is loaded at runtime. Its source glyph was rendered at design time using the open-source "Spicy Rice" Google Font; see `assets/favicon/about.txt` for provenance. This does not affect the "no external font requests" claim above, since nothing is fetched from Google at runtime.
 
 == Changelog ==
+
+= 1.1.1 =
+* Fixed "View all articles" (front page and the Latest Posts pattern) and the 404 template's "Back to homepage" button: both used a hardcoded path (`/blog/`, `/`) that 404s on any site installed in a subdirectory, or where the blog/posts page isn't actually named/slugged "blog". They're now resolved dynamically at render time — "View all articles" links to whatever page is set as the Posts page under Settings -> Reading (falling back to the homepage if none is set), and "Back to homepage" always uses `home_url()`.
+* Fixed a sidebar layout bug: the sidebar's outer container declared WordPress's "constrained" layout (meant for centering page content) while also being a custom flex column via the theme's CSS. Combining the two meant WordPress's own "center each child, cap its width" rule fought the flex-stretch behavior, and any card whose content wasn't intrinsically wide (Categories, Popular tags, the search box) would shrink to fit its content and end up narrower than the others instead of matching their width. The sidebar now uses the default (flow) layout, so all sidebar boxes render at a consistent full width, matching the design in the screenshot.
 
 = 1.1.0 =
 * Added a bundled favicon/touch-icon set (`assets/favicon/`: favicon.ico, 16/32px PNGs, Apple touch icon, Android/PWA icons and web manifest). It's served automatically as a fallback via `wp_head`/`login_head` only when no Site Icon has been set under Appearance → Editor → Site Icon, so it never overrides a site owner's own choice.

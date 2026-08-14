@@ -59,6 +59,10 @@ This theme bundles no third-party fonts, images, icon fonts or JavaScript librar
 
 ## Changelog
 
+### 1.1.1
+- Fixed "View all articles" and 404's "Back to homepage" 404'ing on subdirectory installs / sites where the blog page isn't named "blog" — both now resolve dynamically (Reading settings' Posts page, and `home_url()`, respectively) instead of using a hardcoded path.
+- Fixed sidebar boxes rendering at inconsistent widths (the outer sidebar container mixed WordPress's "constrained" layout with a custom flex-column CSS override, which made narrower-content cards shrink instead of stretching to match). All sidebar boxes now render at a consistent width.
+
 ### 1.1.0
 - Added a bundled favicon/touch-icon set (`assets/favicon/`), served as a fallback via `wp_head`/`login_head` only when no Site Icon is set (Appearance → Editor → Site Icon) — never overrides a site owner's own choice.
 
