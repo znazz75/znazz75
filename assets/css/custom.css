@@ -1,0 +1,569 @@
+/* ==========================================================================
+   znazz75 — custom styles layered on top of theme.json global styles.
+   Design DNA: colors & shapes from codeshack.io, structure from shareus.com.
+   ========================================================================== */
+
+:root {
+	--z75-radius-sm: 6px;
+	--z75-radius-md: 12px;
+	--z75-radius-pill: 999px;
+	--z75-shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.06), 0 1px 3px rgba(15, 23, 42, 0.1);
+	--z75-shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.07), 0 2px 4px -2px rgba(15, 23, 42, 0.06);
+	--z75-shadow-lg: 0 20px 25px -5px rgba(15, 23, 42, 0.1), 0 8px 10px -6px rgba(15, 23, 42, 0.05);
+}
+
+/* --------------------------------------------------------------------------
+   1. Site header
+   -------------------------------------------------------------------------- */
+.site-header {
+	position: sticky;
+	top: 0;
+	z-index: 100;
+	border-bottom: 1px solid var(--wp--preset--color--base-3);
+	background: color-mix(in srgb, var(--wp--preset--color--base) 92%, transparent);
+	backdrop-filter: saturate(1.4) blur(10px);
+	-webkit-backdrop-filter: saturate(1.4) blur(10px);
+}
+
+.site-header .wp-block-site-title a {
+	text-decoration: none;
+}
+
+.header-search {
+	max-width: 240px;
+	flex-shrink: 1;
+	min-width: 0;
+}
+
+.site-header .wp-block-button {
+	flex-shrink: 0;
+}
+
+.site-header .wp-block-button__link {
+	white-space: nowrap;
+}
+
+.site-header .wp-block-site-title,
+.site-header .wp-block-site-title a {
+	white-space: nowrap;
+}
+
+/* Below ~1024px a long page-list-driven nav plus the search field no
+   longer fits on one line; drop the compact header search first since
+   the hero and 404 template both already offer a full-width search. */
+@media (max-width: 1024px) {
+	.site-header .header-search {
+		display: none;
+	}
+}
+
+/* Below the core Navigation block's own mobile breakpoint (600px) it
+   already collapses into a toggle button, but the remaining row
+   (logo/title + toggle + subscribe) still needs to be allowed to wrap
+   so nothing gets squeezed into a vertical sliver on narrow phones. */
+@media (max-width: 480px) {
+	.site-header > .wp-block-group {
+		flex-wrap: wrap;
+		row-gap: 0.5rem;
+	}
+}
+
+.header-search .wp-block-search__inside-wrapper {
+	border-radius: var(--z75-radius-pill);
+	background: var(--wp--preset--color--base-2);
+	border: 1px solid var(--wp--preset--color--base-3);
+	padding-left: 0.5rem;
+}
+
+.header-search .wp-block-search__input {
+	border: 0;
+	background: transparent;
+	font-size: 0.875rem;
+}
+
+.header-search .wp-block-search__button {
+	border-radius: var(--z75-radius-pill);
+	border: 0;
+	margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   2. Hero
+   -------------------------------------------------------------------------- */
+.site-hero,
+.page-hero {
+	position: relative;
+	overflow: hidden;
+	color: #ffffff;
+}
+
+.site-hero {
+	padding-top: clamp(4rem, 10vw, 7rem);
+	padding-bottom: clamp(5rem, 12vw, 9rem);
+	text-align: center;
+}
+
+.page-hero {
+	padding-top: clamp(2.5rem, 7vw, 4.5rem);
+	padding-bottom: clamp(2.5rem, 7vw, 4.5rem);
+}
+
+.site-hero::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 140px;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23ffffff' fill-opacity='0.08' d='M0,256L60,261.3C120,267,240,277,360,250.7C480,224,600,160,720,160C840,160,960,224,1080,245.3C1200,267,1320,245,1380,234.7L1440,224L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+	background-size: cover;
+	background-position: center bottom;
+	background-repeat: no-repeat;
+	pointer-events: none;
+}
+
+.site-hero .wp-block-heading,
+.page-hero .wp-block-heading {
+	color: #ffffff;
+}
+
+/* Hero search */
+.site-search {
+	max-width: 36rem;
+	margin-inline: auto;
+}
+
+.site-search .wp-block-search__inside-wrapper {
+	background: #ffffff;
+	border: 2px solid rgba(255, 255, 255, 0.25);
+	border-radius: var(--z75-radius-pill);
+	padding: 0.35rem;
+	box-shadow: var(--z75-shadow-lg);
+}
+
+.site-search .wp-block-search__input {
+	border: 0;
+	background: transparent;
+	padding-inline: 1.1rem;
+	font-size: 1rem;
+}
+
+.site-search .wp-block-search__button {
+	border: 0;
+	border-radius: var(--z75-radius-pill);
+	background: var(--wp--preset--color--primary);
+	padding-inline: 1.4rem;
+}
+
+.site-search .wp-block-search__button:hover {
+	background: var(--wp--preset--color--primary-2);
+}
+
+/* Stats strip */
+.stats-strip {
+	border-top: 1px solid rgba(255, 255, 255, 0.15);
+	padding-top: 1.5rem;
+	margin-top: clamp(2.5rem, 6vw, 4rem);
+}
+
+.stats-strip .wp-block-column {
+	text-align: center;
+}
+
+.stats-strip .stats-number {
+	font-family: "Inter Tight", "Segoe UI", system-ui, -apple-system, sans-serif;
+	font-weight: 800;
+	font-size: clamp(1.75rem, 3vw, 2.5rem);
+	color: #ffffff;
+	line-height: 1.1;
+	margin-block-end: 0.25rem;
+}
+
+.stats-strip .stats-label {
+	color: rgba(255, 255, 255, 0.75);
+	font-size: 0.8125rem;
+	text-transform: uppercase;
+	letter-spacing: 0.08em;
+	margin-block-start: 0;
+}
+
+/* --------------------------------------------------------------------------
+   3. Cards & surfaces
+   -------------------------------------------------------------------------- */
+.is-style-card,
+.post-card,
+.product-card,
+.sidebar-card,
+.newsletter-card {
+	background: var(--wp--preset--color--surface);
+	border: 1px solid var(--wp--preset--color--base-3);
+	border-radius: var(--z75-radius-md);
+	box-shadow: var(--z75-shadow-sm);
+	padding: clamp(1.25rem, 3vw, 2rem);
+}
+
+/* --------------------------------------------------------------------------
+   4. Section headings
+   -------------------------------------------------------------------------- */
+.section-head .wp-block-heading {
+	margin-block: 0;
+}
+
+.section-subtitle {
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	font-size: 0.75rem;
+	font-weight: 700;
+	color: var(--wp--preset--color--primary);
+	margin-block-end: 0.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   5. Product cards
+   -------------------------------------------------------------------------- */
+.product-card {
+	height: 100%;
+	text-align: center;
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+	transform: translateY(-4px);
+	box-shadow: var(--z75-shadow-lg);
+}
+
+.product-card-icon {
+	width: 64px;
+	height: 64px;
+	margin-inline: auto;
+	border-radius: var(--z75-radius-md);
+	background: linear-gradient(135deg, #3f3377 0%, #2c85ac 55%, #30b3a3 100%);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #ffffff;
+	margin-bottom: 1.25rem;
+}
+
+.product-card-icon svg {
+	width: 28px;
+	height: 28px;
+}
+
+/* --------------------------------------------------------------------------
+   6. Query loop / post cards
+   -------------------------------------------------------------------------- */
+.wp-block-post-template .wp-block-post {
+	display: flex;
+}
+
+.wp-block-post-template .wp-block-post > .wp-block-group {
+	width: 100%;
+}
+
+.post-card {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.post-card:hover {
+	transform: translateY(-4px);
+	box-shadow: var(--z75-shadow-lg);
+}
+
+.post-card .wp-block-post-featured-image {
+	margin-bottom: 1.25rem;
+	border-radius: calc(var(--z75-radius-md) - 4px);
+	overflow: hidden;
+}
+
+.post-card .taxonomy-category {
+	margin-bottom: 0.5rem;
+	align-self: flex-start;
+}
+
+.post-card .wp-block-post-title {
+	margin-top: 0.5rem;
+}
+
+.post-card .wp-block-post-title a {
+	text-decoration: none;
+}
+
+.post-card .wp-block-post-title a:hover {
+	color: var(--wp--preset--color--primary);
+}
+
+.post-card .wp-block-post-excerpt {
+	margin-block: 0.75rem;
+}
+
+.post-card .post-meta {
+	margin-top: auto;
+}
+
+.post-card .post-meta .wp-block-post-date,
+.post-card .post-meta .wp-block-post-author-name {
+	font-size: 0.8125rem;
+}
+
+/* Category / tag chips */
+.wp-block-post-terms.is-style-chip {
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: 0.35rem;
+	background: var(--wp--preset--color--base-2);
+	border: 1px solid var(--wp--preset--color--base-3);
+	border-radius: var(--z75-radius-pill);
+	padding: 0.25rem 0.75rem;
+	font-size: 0.75rem;
+	font-weight: 700;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+}
+
+.wp-block-post-terms.is-style-chip a {
+	color: var(--wp--preset--color--primary);
+	text-decoration: none;
+}
+
+.wp-block-post-terms.is-style-chip a:hover {
+	color: var(--wp--preset--color--primary-2);
+	text-decoration: underline;
+}
+
+/* --------------------------------------------------------------------------
+   7. Newsletter CTA
+   -------------------------------------------------------------------------- */
+.newsletter-card {
+	text-align: center;
+	color: #ffffff;
+	border: 0;
+}
+
+.newsletter-card .wp-block-heading {
+	color: #ffffff;
+}
+
+.newsletter-form {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.75rem;
+	justify-content: center;
+	max-width: 34rem;
+	margin: 1.5rem auto 0;
+}
+
+.newsletter-form input[type="email"] {
+	flex: 1 1 16rem;
+	border: 0;
+	border-radius: var(--z75-radius-pill);
+	padding: 0.85rem 1.4rem;
+	font-size: 0.95rem;
+	background: rgba(255, 255, 255, 0.14);
+	color: #ffffff;
+	outline: none;
+	transition: background 0.2s ease;
+}
+
+.newsletter-form input[type="email"]::placeholder {
+	color: rgba(255, 255, 255, 0.7);
+}
+
+.newsletter-form input[type="email"]:focus {
+	background: rgba(255, 255, 255, 0.24);
+}
+
+.newsletter-form button {
+	border: 0;
+	border-radius: var(--z75-radius-pill);
+	background: #ffffff;
+	color: #0f172a;
+	font-weight: 700;
+	font-size: 0.95rem;
+	padding: 0.85rem 1.8rem;
+	cursor: pointer;
+	transition: transform 0.2s ease;
+}
+
+.newsletter-form button:hover {
+	transform: translateY(-2px);
+}
+
+/* --------------------------------------------------------------------------
+   8. Sidebar
+   -------------------------------------------------------------------------- */
+.sidebar {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+}
+
+.sidebar .wp-block-search__inside-wrapper {
+	border-radius: var(--z75-radius-pill);
+	border: 1px solid var(--wp--preset--color--base-3);
+	background: var(--wp--preset--color--surface);
+}
+
+.sidebar .wp-block-search__button {
+	border-radius: var(--z75-radius-pill);
+	border: 0;
+	margin: 0;
+}
+
+.sidebar-card .wp-block-latest-posts,
+.sidebar-card .wp-block-categories {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.sidebar-card .wp-block-latest-posts li {
+	padding: 0.7rem 0;
+	border-bottom: 1px solid var(--wp--preset--color--base-2);
+}
+
+.sidebar-card .wp-block-latest-posts li:last-child {
+	border-bottom: 0;
+}
+
+.sidebar-card .wp-block-latest-posts a {
+	text-decoration: none;
+	font-weight: 500;
+}
+
+.sidebar-card .wp-block-latest-posts .wp-block-latest-posts__post-date {
+	font-size: 0.75rem;
+}
+
+.sidebar-card .wp-block-categories li {
+	padding: 0.45rem 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-bottom: 1px solid var(--wp--preset--color--base-2);
+}
+
+.sidebar-card .wp-block-categories li:last-child {
+	border-bottom: 0;
+}
+
+/* --------------------------------------------------------------------------
+   9. Single post
+   -------------------------------------------------------------------------- */
+.post-meta-chips {
+	flex-wrap: wrap;
+}
+
+.wp-block-post-content {
+	max-width: 46rem;
+}
+
+.post-navigation .wp-block-post-navigation-link {
+	flex: 1;
+}
+
+.post-navigation .wp-block-post-navigation-link a {
+	text-decoration: none;
+	font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   10. Footer
+   -------------------------------------------------------------------------- */
+.site-footer {
+	color: #cbd5e1;
+}
+
+.site-footer .wp-block-heading {
+	color: #ffffff;
+	font-size: 1rem;
+	margin-block-end: 1rem;
+}
+
+.site-footer a {
+	color: #94a3b8;
+	text-decoration: none;
+}
+
+.site-footer a:hover {
+	color: #ffffff;
+}
+
+.site-footer .wp-block-page-list,
+.site-footer .wp-block-categories {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.site-footer .wp-block-page-list li,
+.site-footer .wp-block-categories li {
+	padding: 0.3rem 0;
+}
+
+.site-footer .social-follow .wp-block-social-link-anchor svg {
+	fill: #94a3b8;
+}
+
+.site-footer .social-follow .wp-block-social-link:hover svg {
+	fill: #ffffff;
+}
+
+.site-footer .wp-block-search__inside-wrapper {
+	border-radius: var(--z75-radius-pill);
+	border: 1px solid #334155;
+	background: rgba(255, 255, 255, 0.06);
+}
+
+.site-footer .wp-block-search__input {
+	border: 0;
+	background: transparent;
+	color: #ffffff;
+}
+
+.site-footer .wp-block-search__button {
+	border-radius: var(--z75-radius-pill);
+	border: 0;
+	margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   11. Buttons & utilities
+   -------------------------------------------------------------------------- */
+.wp-block-button.is-style-pill .wp-block-button__link,
+.wp-block-button.is-style-pill > .wp-block-button__link {
+	border-radius: var(--z75-radius-pill);
+}
+
+.wp-block-search__button {
+	cursor: pointer;
+}
+
+::selection {
+	background: var(--wp--preset--color--primary);
+	color: var(--wp--preset--color--white);
+}
+
+/* Accessible skip link */
+.screen-reader-text:focus {
+	clip: auto;
+	clip-path: none;
+	height: auto;
+	width: auto;
+	margin: 0;
+	position: fixed;
+	top: 1rem;
+	left: 1rem;
+	z-index: 100000;
+	background: var(--wp--preset--color--surface);
+	color: var(--wp--preset--color--contrast);
+	padding: 0.75rem 1.25rem;
+	border-radius: 8px;
+	box-shadow: var(--z75-shadow-lg);
+	text-decoration: none;
+}
+
+

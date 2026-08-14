@@ -1,0 +1,71 @@
+/* ==========================================================================
+   znazz75 — editor-only styles so the block editor mirrors the front end.
+   ========================================================================== */
+
+.wp-block-post-terms.is-style-chip {
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: 0.35rem;
+	background: #f1f5f9;
+	border: 1px solid #e2e8f0;
+	border-radius: 999px;
+	padding: 0.25rem 0.75rem;
+	font-size: 0.75rem;
+	font-weight: 700;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+}
+
+.is-style-card,
+.post-card,
+.product-card,
+.sidebar-card,
+.newsletter-card {
+	background: #ffffff;
+	border: 1px solid #e2e8f0;
+	border-radius: 12px;
+	box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06), 0 1px 3px rgba(15, 23, 42, 0.1);
+	padding: clamp(1.25rem, 3vw, 2rem);
+}
+
+.product-card {
+	text-align: center;
+}
+
+.product-card-icon {
+	width: 64px;
+	height: 64px;
+	margin-inline: auto;
+	border-radius: 12px;
+	background: linear-gradient(135deg, #3f3377 0%, #2c85ac 55%, #30b3a3 100%);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #ffffff;
+	margin-bottom: 1.25rem;
+}
+
+.section-subtitle {
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	font-size: 0.75rem;
+	font-weight: 700;
+	color: #2563eb;
+	margin-block-end: 0.5rem;
+}
+
+.stats-strip .stats-number {
+	font-family: "Inter Tight", "Segoe UI", system-ui, -apple-system, sans-serif;
+	font-weight: 800;
+	font-size: clamp(1.75rem, 3vw, 2.5rem);
+	line-height: 1.1;
+	margin-block-end: 0.25rem;
+}
+
+.stats-strip .stats-label {
+	color: #64748b;
+	font-size: 0.8125rem;
+	text-transform: uppercase;
+	letter-spacing: 0.08em;
+	margin-block-start: 0;
+}

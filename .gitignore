@@ -1,0 +1,22 @@
+# OS junk
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor/IDE
+.vscode/
+.idea/
+*.sublime-*
+
+# Local tooling / assistant config (not part of the theme)
+.claude/
+
+# Build artifacts
+*.zip
+node_modules/
+.wordpress-org/
+
+# Backups / scratch
+*.bak
+*.orig
+*~

@@ -1,0 +1,44 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.7/theme.json",
+	"version": 3,
+	"title": "Dark",
+	"slug": "dark",
+	"settings": {
+		"color": {
+			"palette": [
+				{ "slug": "base", "name": "Base", "color": "#151c2c" },
+				{ "slug": "base-2", "name": "Base 2", "color": "#1c2941" },
+				{ "slug": "base-3", "name": "Base 3", "color": "#2e4159" },
+				{ "slug": "surface", "name": "Surface", "color": "#1a2637" },
+				{ "slug": "contrast", "name": "Contrast", "color": "#f8fafc" },
+				{ "slug": "contrast-2", "name": "Contrast 2", "color": "#e2e8f0" },
+				{ "slug": "contrast-3", "name": "Contrast 3", "color": "#cbd5e1" },
+				{ "slug": "muted", "name": "Muted", "color": "#94a3b8" },
+				{ "slug": "muted-2", "name": "Muted 2", "color": "#64748b" },
+				{ "slug": "muted-3", "name": "Muted 3", "color": "#475569" },
+				{ "slug": "primary", "name": "Primary", "color": "#4b8ef0" },
+				{ "slug": "primary-2", "name": "Primary 2", "color": "#60a5fa" },
+				{ "slug": "primary-3", "name": "Primary 3", "color": "#93c5fd" },
+				{ "slug": "teal", "name": "Teal", "color": "#2dd4bf" },
+				{ "slug": "purple", "name": "Purple", "color": "#8b7cf6" },
+				{ "slug": "success", "name": "Success", "color": "#22c55e" },
+				{ "slug": "error", "name": "Error", "color": "#f87171" },
+				{ "slug": "white", "name": "White", "color": "#ffffff" }
+			]
+		}
+	},
+	"styles": {
+		"elements": {
+			"link": {
+				":hover": {
+					"color": { "text": "#93c5fd" }
+				}
+			},
+			"button": {
+				":hover": {
+					"color": { "background": "#6ba3f4" }
+				}
+			}
+		}
+	}
+}

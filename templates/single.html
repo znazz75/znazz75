@@ -1,0 +1,51 @@
+<!-- wp:template-part {"slug":"header","area":"header"} /-->
+
+<!-- wp:group {"tagName":"main","align":"wide","className":"content-area","layout":{"type":"constrained"},"style":{"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70"}}}} -->
+<main class="wp-block-group alignwide content-area">
+	<!-- wp:columns {"align":"wide"} -->
+	<div class="wp-block-columns alignwide">
+		<!-- wp:column {"width":"68%"} -->
+		<div class="wp-block-column" style="flex-basis:68%">
+			<!-- wp:group {"layout":{"type":"constrained"}} -->
+			<div class="wp-block-group">
+				<!-- wp:post-featured-image {"align":"wide","style":{"border":{"radius":"12px"}}} /-->
+				<!-- wp:post-title {"level":1,"fontFamily":"display","fontSize":"xx-large"} /-->
+				<!-- wp:group {"className":"post-meta-chips","layout":{"type":"flex","flexWrap":"wrap","alignItems":"center"},"style":{"spacing":{"blockGap":"0.75rem","margin":{"bottom":"2rem"}}}} -->
+				<div class="wp-block-group post-meta-chips">
+					<!-- wp:post-author-name {"isLink":true,"fontSize":"small"} /-->
+					<!-- wp:post-date {"format":"M j, Y","isLink":false,"fontSize":"small"} /-->
+					<!-- wp:post-terms {"term":"category","className":"is-style-chip"} /-->
+				</div>
+				<!-- /wp:group -->
+				<!-- wp:group {"tagName":"article","layout":{"type":"constrained"}} -->
+				<article class="wp-block-group">
+					<!-- wp:post-content {"layout":{"type":"constrained"}} /-->
+					<!-- wp:post-terms {"term":"post_tag","className":"is-style-chip"} /-->
+				</article>
+				<!-- /wp:group -->
+				<!-- wp:group {"className":"post-navigation","layout":{"type":"flex","justifyContent":"space-between","flexWrap":"wrap"},"style":{"spacing":{"margin":{"top":"3rem"}}}} -->
+				<div class="wp-block-group post-navigation">
+					<!-- wp:post-navigation-link {"type":"previous","label":"← Previous post"} /-->
+					<!-- wp:post-navigation-link {"label":"Next post →"} /-->
+				</div>
+				<!-- /wp:group -->
+				<!-- wp:comments -->
+				<!-- wp:group {"layout":{"type":"constrained"}} -->
+				<div class="wp-block-group"><!-- wp:post-comments-form /--></div>
+				<!-- /wp:group -->
+				<!-- /wp:comments -->
+			</div>
+			<!-- /wp:group -->
+		</div>
+		<!-- /wp:column -->
+		<!-- wp:column {"width":"32%"} -->
+		<div class="wp-block-column" style="flex-basis:32%">
+			<!-- wp:template-part {"slug":"sidebar"} /-->
+		</div>
+		<!-- /wp:column -->
+	</div>
+	<!-- /wp:columns -->
+</main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","area":"footer"} /-->
