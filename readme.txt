@@ -4,7 +4,7 @@ Tags: blog, news, one-column, two-columns, right-sidebar, wide-blocks, block-pat
 Requires at least: 6.4
 Tested up to: 6.7
 Requires PHP: 7.4
-Stable tag: 1.1.1
+Stable tag: 1.1.2
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -123,6 +123,9 @@ This theme bundles no third-party fonts, images, icon fonts or JavaScript librar
 The bundled favicon set (`assets/favicon/`) is a static, pre-rendered raster image set — no font is loaded at runtime. Its source glyph was rendered at design time using the open-source "Spicy Rice" Google Font; see `assets/favicon/about.txt` for provenance. This does not affect the "no external font requests" claim above, since nothing is fetched from Google at runtime.
 
 == Changelog ==
+
+= 1.1.2 =
+* Fixed unreadable code blocks from the Enlighter plugin when the Dark style variation is active. Enlighter's default code theme doesn't set its own background (it inherits the page's), which only worked by accident against this theme's light background — against Dark, its dark text became unreadable. Added a small, narrowly-scoped rule (`.enlighter-t-enlighter .enlighter-code`) that gives Enlighter's default theme a fixed, always-light backdrop, so it renders the same regardless of which style variation is active. Enlighter's own stylesheet isn't touched, and the rule doesn't affect other Enlighter themes (Dracula, Monokai, etc.) that already ship their own background.
 
 = 1.1.1 =
 * Fixed "View all articles" (front page and the Latest Posts pattern) and the 404 template's "Back to homepage" button: both used a hardcoded path (`/blog/`, `/`) that 404s on any site installed in a subdirectory, or where the blog/posts page isn't actually named/slugged "blog". They're now resolved dynamically at render time — "View all articles" links to whatever page is set as the Posts page under Settings -> Reading (falling back to the homepage if none is set), and "Back to homepage" always uses `home_url()`.

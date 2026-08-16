@@ -608,4 +608,29 @@
 	text-decoration: none;
 }
 
+/* --------------------------------------------------------------------------
+   12. Third-party: Enlighter (syntax highlighter) isolation
+   -------------------------------------------------------------------------- */
+/*
+ * Enlighter's default "Enlighter" code theme doesn't set its own
+ * background — it's built to inherit whatever's behind it, which only
+ * reads correctly on a light page. This theme's Dark style variation
+ * makes that surrounding background dark while Enlighter's own token
+ * colors stay dark too (its default theme uses near-black text), so
+ * code blocks turn unreadable. Rather than edit Enlighter's own
+ * stylesheet, give its container a fixed, theme-invariant backdrop so
+ * it always renders the way Enlighter's default theme intends, in both
+ * the default and Dark style variations.
+ *
+ * Scoped to .enlighter-t-enlighter (Enlighter's own class for its
+ * default theme) so it won't fight a self-contained dark Enlighter
+ * theme (Dracula, Monokai, etc.) if you switch to one later — those
+ * already ship their own background and are unaffected by this rule.
+ */
+.enlighter-t-enlighter .enlighter-code {
+	background-color: #ffffff;
+	border: 1px solid #e0e0e0;
+	border-radius: 8px;
+}
+
 

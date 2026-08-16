@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'ZNAZZ75_VERSION', '1.1.1' );
+define( 'ZNAZZ75_VERSION', '1.1.2' );
 
 /**
  * Theme setup.

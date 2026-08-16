@@ -59,6 +59,9 @@ This theme bundles no third-party fonts, images, icon fonts or JavaScript librar
 
 ## Changelog
 
+### 1.1.2
+- Fixed unreadable Enlighter (syntax highlighter plugin) code blocks under the Dark style variation — Enlighter's default theme inherits the page background instead of setting its own, so its dark text became unreadable against a dark page. Added a narrowly-scoped rule giving it a fixed, always-light backdrop regardless of the active style variation.
+
 ### 1.1.1
 - Fixed "View all articles" and 404's "Back to homepage" 404'ing on subdirectory installs / sites where the blog page isn't named "blog" — both now resolve dynamically (Reading settings' Posts page, and `home_url()`, respectively) instead of using a hardcoded path.
 - Fixed sidebar boxes rendering at inconsistent widths (the outer sidebar container mixed WordPress's "constrained" layout with a custom flex-column CSS override, which made narrower-content cards shrink instead of stretching to match). All sidebar boxes now render at a consistent width.
